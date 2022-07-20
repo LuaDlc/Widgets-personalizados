@@ -26,8 +26,8 @@ class _OnePageState extends State<OnePage> {
               AnimatedBuilder(
                 animation:Listenable.merge([_controller.posts, _controller.inLoader]),
                 builder:(_, __) => _controller.inLoader.value
-                 ? CircularProgressIndicator() : ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
+                 ? const CircularProgressIndicator() : ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: _controller.posts.value.length,
                   itemBuilder: (_, idx) => ListTile(
@@ -36,7 +36,7 @@ class _OnePageState extends State<OnePage> {
                   ),
                   )
                ),
-              SizedBox(height:10),
+              const SizedBox(height:10),
               CustomButtonWidget(
                 disable: true,
                 onPressed:() => _controller.callAPI(),
